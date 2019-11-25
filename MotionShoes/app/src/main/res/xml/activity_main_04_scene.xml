@@ -90,7 +90,7 @@
                 motion:customFloatValue="0.0" />
         </Constraint>
     </ConstraintSet>
-    <ConstraintSet android:id="@+id/disconnected" >
+    <ConstraintSet android:id="@+id/offline" >
         <Constraint
             android:id="@+id/connect"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -139,11 +139,11 @@
     </ConstraintSet>
     <Transition
         motion:constraintSetStart="@+id/end"
-        motion:constraintSetEnd="@+id/disconnected" >
+        motion:constraintSetEnd="@+id/offline" >
         <OnClick motion:targetId="@+id/logout" />
     </Transition>
     <ConstraintSet android:id="@+id/login"
-        motion:deriveConstraintsFrom="@+id/disconnected">
+        motion:deriveConstraintsFrom="@+id/offline">
         <Constraint
             android:id="@+id/connect"
             motion:layout_constraintEnd_toEndOf="parent"
@@ -185,7 +185,7 @@
         </Constraint>
     </ConstraintSet>
     <Transition
-        motion:constraintSetStart="@+id/disconnected"
+        motion:constraintSetStart="@+id/offline"
         motion:constraintSetEnd="@+id/login" >
         <OnClick motion:targetId="@+id/connect" />
     </Transition>
