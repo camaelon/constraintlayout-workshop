@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:autoTransition="animateToEnd">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/top_bar"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            android:translationY="-300dp" />
+        <Constraint
+            android:id="@+id/top_bar"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            motion:layout_constraintHorizontal_bias="0.48"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:translationY="-300dp" />
+        <Constraint
+            android:id="@+id/main_image"
+            android:elevation="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.110000014"
+            motion:layout_constraintTop_toBottomOf="@+id/top_bar"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintDimensionRatio="w,1:1"
+            android:alpha="0.0" />
+        <Constraint
+            android:id="@+id/device_text"
+            motion:layout_constraintEnd_toEndOf="@+id/main_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/main_image"
+            motion:layout_constraintHorizontal_bias="0.493"
+            motion:layout_constraintStart_toStartOf="@+id/main_image"
+            android:layout_marginTop="16dp"
+            android:translationX="-500dp" />
+        <Constraint
+            android:id="@+id/battery_image"
+            motion:layout_constraintEnd_toEndOf="@+id/device_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/device_text"
+            motion:layout_constraintHorizontal_bias="0.538"
+            motion:layout_constraintStart_toStartOf="@+id/device_text"
+            android:layout_marginTop="8dp"
+            android:translationX="500dp" />
+        <Constraint
+            android:layout_height="64dp"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/bottom_bar"
+            motion:layout_constraintTop_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/main_image"
+            android:elevation="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.110000014"
+            motion:layout_constraintTop_toBottomOf="@+id/top_bar"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintDimensionRatio="w,1:1">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="0.0" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/disconnected" >
+        <Constraint
+            android:id="@+id/connect"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toTopOf="@+id/login_panel"
+            motion:layout_constraintTop_toBottomOf="@+id/battery_image"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/device_text"
+            motion:layout_constraintEnd_toEndOf="@+id/main_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/main_image"
+            motion:layout_constraintHorizontal_bias="0.493"
+            motion:layout_constraintStart_toStartOf="@+id/main_image"
+            android:layout_marginTop="16dp"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/battery_image"
+            motion:layout_constraintEnd_toEndOf="@+id/device_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/device_text"
+            motion:layout_constraintHorizontal_bias="0.538"
+            motion:layout_constraintStart_toStartOf="@+id/device_text"
+            android:layout_marginTop="8dp"
+            android:visibility="invisible" />
+        <Constraint
+            android:id="@+id/main_image"
+            android:elevation="10dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.110000014"
+            motion:layout_constraintTop_toBottomOf="@+id/top_bar"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintDimensionRatio="w,1:1">
+            <CustomAttribute
+                motion:attributeName="crossfade"
+                motion:customFloatValue="1.0" />
+        </Constraint>
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetStart="@+id/end"
+        motion:constraintSetEnd="@+id/disconnected" >
+        <OnClick motion:targetId="@+id/logout" />
+    </Transition>
+</MotionScene>
