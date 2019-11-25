@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         if (email.text.toString().equals("john")) { // todo real verification
             layout.transitionToState(R.id.end);
         } else {
-            layout.transitionToState(R.id.disconnected)
+            layout.transitionToState(R.id.offline)
         }
     }
 }
